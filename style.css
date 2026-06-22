@@ -703,27 +703,206 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
-  .nav { display: none; }
-  .header-inner { height: 56px; }
-  .categories-grid { grid-template-columns: 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .footer-top {
+@media (max-width: 1024px) {
+  .hero-3d-inner {
     grid-template-columns: 1fr;
-    gap: 24px;
+    text-align: center;
+    gap: 30px;
   }
-  .hero-3d {
-    min-height: auto;
-    padding: 40px 16px;
+  .hero-3d-content {
+    align-items: center;
+  }
+  .hero-3d-desc {
+    max-width: 100%;
+  }
+  .hero-3d-buttons {
+    justify-content: center;
+  }
+  .hero-3d-stats {
+    justify-content: center;
   }
   .hero-3d-cards {
-    display: none;
+    height: 200px; /* reduced height for tablet */
+    margin-top: 20px;
   }
-  .float-card { display: none; }
+  .float-card {
+    padding: 10px 14px;
+    font-size: 12px;
+    backdrop-filter: blur(10px);
+  }
+  .float-card-icon {
+    font-size: 20px;
+  }
+  .float-card-text {
+    font-size: 12px;
+  }
+  .float-card-badge {
+    font-size: 8px;
+    padding: 1px 8px;
+  }
+  /* reposition for tablet */
+  .float-card-1 { top: 5%; right: 25%; }
+  .float-card-2 { top: 35%; right: 5%; }
+  .float-card-3 { bottom: 5%; right: 20%; }
+  .float-card-4 { top: 10%; right: 50%; }
+  .categories-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-/* ===== SELECTION ===== */
-::selection {
-  background: var(--green);
-  color: var(--bg-primary);
+@media (max-width: 768px) {
+  .nav { display: none; }
+  .header-inner { height: 56px; padding: 0 16px; }
+  .logo { font-size: 20px; }
+
+  .hero-3d {
+    min-height: auto;
+    padding: 30px 16px 50px;
+  }
+  .hero-3d-inner {
+    gap: 20px;
+  }
+  .hero-3d-title {
+    font-size: 28px;
+  }
+  .hero-3d-desc {
+    font-size: 14px;
+  }
+  .hero-3d-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-3d-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .stat-number {
+    font-size: 20px;
+  }
+  .stat-label {
+    font-size: 10px;
+  }
+  .stat-divider {
+    height: 20px;
+  }
+
+  /* ===== FLOATING CARDS ON MOBILE ===== */
+  .hero-3d-cards {
+    height: 160px;
+    margin-top: 10px;
+  }
+  .float-card {
+    padding: 6px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  }
+  .float-card-icon {
+    font-size: 16px;
+  }
+  .float-card-text {
+    font-size: 10px;
+  }
+  .float-card-badge {
+    font-size: 7px;
+    padding: 1px 6px;
+  }
+  /* reposition for mobile – scattered across the hero area */
+  .float-card-1 { top: 0%; right: 5%; }
+  .float-card-2 { top: 25%; right: 30%; }
+  .float-card-3 { bottom: 0%; right: 10%; }
+  .float-card-4 { top: 10%; right: 60%; }
+
+  /* Category grid */
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .category-card-3d {
+    padding: 20px;
+  }
+  .category-card-3d h3 {
+    font-size: 16px;
+  }
+
+  /* Blog grid */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .blog-card-image {
+    height: 100px;
+    font-size: 40px;
+  }
+  .blog-card-body {
+    padding: 14px 16px;
+  }
+  .blog-card-body h4 {
+    font-size: 14px;
+  }
+
+  /* Section headers */
+  .section-header h2 {
+    font-size: 24px;
+  }
+  .section-header p {
+    font-size: 14px;
+  }
+  .categories-section,
+  .blog-section {
+    padding: 40px 16px;
+  }
+
+  /* Orbs – scale down */
+  .orb-1 { width: 200px; height: 200px; }
+  .orb-2 { width: 150px; height: 150px; }
+  .orb-3 { width: 100px; height: 100px; }
+
+  /* Footer */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-3d-title {
+    font-size: 24px;
+  }
+  .hero-3d-cards {
+    height: 130px;
+  }
+  .float-card {
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+  .float-card-icon {
+    font-size: 14px;
+  }
+  .float-card-text {
+    font-size: 9px;
+  }
+  .float-card-badge {
+    font-size: 6px;
+    padding: 1px 4px;
+  }
+  .float-card-1 { top: 0%; right: 2%; }
+  .float-card-2 { top: 20%; right: 25%; }
+  .float-card-3 { bottom: 0%; right: 5%; }
+  .float-card-4 { top: 8%; right: 55%; }
 }
